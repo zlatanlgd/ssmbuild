@@ -1,6 +1,6 @@
-package cn.zlatanlgd.dao;
+package cn.medical.dao;
 
-import cn.zlatanlgd.pojo.Books;
+import cn.medical.pojo.Books;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

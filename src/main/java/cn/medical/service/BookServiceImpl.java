@@ -1,9 +1,7 @@
-package cn.zlatanlgd.service;
+package cn.medical.service;
 
-import cn.zlatanlgd.dao.BookMapper;
-import cn.zlatanlgd.pojo.Books;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import cn.medical.dao.BookMapper;
+import cn.medical.pojo.Books;
 
 import java.util.List;
 

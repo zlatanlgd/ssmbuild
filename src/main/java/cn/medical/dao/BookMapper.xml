@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.zlatanlgd.dao.BookMapper">
+<mapper namespace="cn.medical.dao.BookMapper">
     <insert id="addBook" parameterType="Books">
         insert into ssmbuild.books (bookName, bookCounts, detail)
         values (#{bookName}, #{bookCounts}, #{detail});

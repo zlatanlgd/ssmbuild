@@ -10,10 +10,10 @@
     <!--配置数据源，交给Spring做-->
 
     <typeAliases>
-        <package name="cn.zlatanlgd.pojo"/>
+        <package name="cn.medical.pojo"/>
     </typeAliases>
 
     <mappers>
-        <mapper class="cn.zlatanlgd.dao.BookMapper"/>
+        <mapper class="cn.medical.dao.BookMapper"/>
     </mappers>
 </configuration>

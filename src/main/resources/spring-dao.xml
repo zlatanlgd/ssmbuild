@@ -43,7 +43,7 @@
         <!--注入 sqlSessionFactory-->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!--要扫描的dao包-->
-        <property name="basePackage" value="cn.zlatanlgd.dao"/>
+        <property name="basePackage" value="cn.medical.dao"/>
     </bean>
 
 </beans>

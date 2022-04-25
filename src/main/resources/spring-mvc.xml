@@ -13,7 +13,7 @@
     <!--2.静态资源过滤-->
     <mvc:default-servlet-handler/>
     <!--3.扫描包:controller-->
-    <context:component-scan base-package="cn.zlatanlgd.controller"/>
+    <context:component-scan base-package="cn.medical.controller"/>
     <!--4.视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>

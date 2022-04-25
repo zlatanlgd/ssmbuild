@@ -1,8 +1,7 @@
-package cn.zlatanlgd.controller;
+package cn.medical.controller;
 
-import cn.zlatanlgd.pojo.Books;
-import cn.zlatanlgd.service.BookService;
-import cn.zlatanlgd.service.BookServiceImpl;
+import cn.medical.pojo.Books;
+import cn.medical.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;

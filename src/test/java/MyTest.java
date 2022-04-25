@@ -1,5 +1,5 @@
-import cn.zlatanlgd.pojo.Books;
-import cn.zlatanlgd.service.BookService;
+import cn.medical.pojo.Books;
+import cn.medical.service.BookService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

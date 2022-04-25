@@ -1,7 +1,6 @@
-package cn.zlatanlgd.service;
+package cn.medical.service;
 
-import cn.zlatanlgd.pojo.Books;
-import org.apache.ibatis.annotations.Param;
+import cn.medical.pojo.Books;
 
 import java.util.List;
 

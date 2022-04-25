@@ -1,4 +1,4 @@
-package cn.zlatanlgd.pojo;
+package cn.medical.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
