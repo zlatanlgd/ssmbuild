@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class FastJsonController {
-
     @RequestMapping("j1")
     @ResponseBody
     public String json1(){
