@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--自定义Realm-->
+    <bean id="myRealm" class="cn.medical.shiro.mdclRealm"/>
+    <!--创建安全管理器-->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="myRealm"/>
+    </bean>
+
+    <bean id="shiroFilter"
+          class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+<!--        引用指定的安全管理器-->
+        <property name="securityManager" ref="securityManager"/>
+<!--        配置登录url-->
+        <property name="loginUrl" value="/user/token"/>
+<!--        配置拦截规则-->
+        <property name="filterChainDefinitions">
+<!--            配置请求拦截方式-->
+            <value>
+
+            </value>
+        </property>
+    </bean>
+
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+
+    </bean>
+
+</beans>

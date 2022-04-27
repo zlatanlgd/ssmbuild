@@ -14,6 +14,9 @@
     <mvc:default-servlet-handler/>
     <!--3.扫描包:controller-->
     <context:component-scan base-package="cn.medical.controller"/>
+
+    <import resource="shiro.xml"/>
+
     <!--4.视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>

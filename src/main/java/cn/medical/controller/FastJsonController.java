@@ -12,7 +12,6 @@ public class FastJsonController {
     @ResponseBody
     public String json1(){
         User user = new User("lrc",1,"man");
-
         String str = JSON.toJSONString(user);
         return str;
     }

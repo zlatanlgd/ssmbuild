@@ -4,18 +4,18 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.medical.dao.BookMapper">
     <insert id="addBook" parameterType="Books">
-        insert into ssmbuild.books (bookName, bookCounts, detail)
+        insert into mdcldb.books (bookName, bookCounts, detail)
         values (#{bookName}, #{bookCounts}, #{detail});
     </insert>
 
     <delete id="deleteBookById" parameterType="int">
         delete
-        from ssmbuild.books
+        from mdcldb.books
         where bookID = #{bookid};
     </delete>
 
     <update id="updateBook" parameterType="Books">
-        update ssmbuild.books
+        update mdcldb.books
         set bookName=#{bookName},
             bookCounts=#{bookCounts},
             detail=#{detail}
@@ -24,18 +24,18 @@
 
     <select id="queryBookById" resultType="Books">
         select *
-        from ssmbuild.books
+        from mdcldb.books
         where bookID = #{bookid};
     </select>
 
     <select id="queryAllBooks" resultType="Books">
         select *
-        from ssmbuild.books;
+        from mdcldb.books;
     </select>
 
     <select id="queryBookByName" resultType="Books">
         select *
-        from ssmbuild.books
+        from mdcldb.books
         where bookName = #{bookName}
     </select>
 </mapper>
