@@ -9,7 +9,7 @@
 
     <!--2.将我们所有的业务类，注入到Spring。可以通过配置或注解，两种方式实现-->
     <!--2.1配置方式-->
-    <bean id="BookServiceImpl" class="cn.medical.service.BookServiceImpl">
+    <bean id="BookServiceImpl" class="cn.medical.service.impl.BookServiceImpl">
         <property name="bookMapper" ref="bookMapper"/>
     </bean>
     <!--

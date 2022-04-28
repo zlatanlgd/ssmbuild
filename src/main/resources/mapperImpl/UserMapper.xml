@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.medical.dao.userDAOMapper" >
-  <resultMap id="BaseResultMap" type="cn.medical.pojo.userDAO" >
+<mapper namespace="cn.medical.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="cn.medical.pojo.User" >
     <id column="user_id" property="userId" jdbcType="INTEGER" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="password_hash" property="passwordHash" jdbcType="VARCHAR" />
@@ -13,7 +13,7 @@
     <result column="del_flag" property="delFlag" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    user_id, username, password_hash, cellphone, create_by, create_time, update_time, 
+    user_id, username, password_hash, cellphone, create_by, create_time, update_time,
     status, del_flag
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
@@ -22,11 +22,17 @@
     from user
     where user_id = #{userId,jdbcType=INTEGER}
   </select>
+  <select id="selectByUsername" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where username = #{username,jdbcType=VARCHAR}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from user
     where user_id = #{userId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.medical.pojo.userDAO" >
+  <insert id="insert" parameterType="cn.medical.pojo.User" >
     insert into user (user_id, username, password_hash, 
       cellphone, create_by, create_time, 
       update_time, status, del_flag
@@ -36,7 +42,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{delFlag,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="cn.medical.pojo.userDAO" >
+  <insert id="insertSelective" parameterType="cn.medical.pojo.User" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
@@ -97,7 +103,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.medical.pojo.userDAO" >
+  <update id="updateByPrimaryKeySelective" parameterType="cn.medical.pojo.User" >
     update user
     <set >
       <if test="username != null" >
@@ -127,7 +133,7 @@
     </set>
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.medical.pojo.userDAO" >
+  <update id="updateByPrimaryKey" parameterType="cn.medical.pojo.User" >
     update user
     set username = #{username,jdbcType=VARCHAR},
       password_hash = #{passwordHash,jdbcType=VARCHAR},

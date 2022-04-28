@@ -1,7 +1,8 @@
-package cn.medical.service;
+package cn.medical.service.impl;
 
 import cn.medical.dao.BookMapper;
 import cn.medical.pojo.Books;
+import cn.medical.service.BookService;
 
 import java.util.List;
 

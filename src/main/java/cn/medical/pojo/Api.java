@@ -2,7 +2,7 @@ package cn.medical.pojo;
 
 import java.util.Date;
 
-public class roleDAO {
+public class Api {
     private Integer apiId;
 
     private String apiName;

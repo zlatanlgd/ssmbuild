@@ -1,10 +1,12 @@
 package cn.medical.dao;
 
 import cn.medical.pojo.Books;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
+@Mapper
 public interface BookMapper {
     // 增加一本书
     int addBook(Books books);
