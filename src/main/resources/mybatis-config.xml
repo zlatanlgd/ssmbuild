@@ -13,7 +13,10 @@
         <package name="cn.medical.pojo"/>
     </typeAliases>
 
+<!--    <mappers>-->
+<!--        <mapper class="cn.medical.dao.BookMapper"/>-->
+<!--    </mappers>-->
     <mappers>
-        <mapper class="cn.medical.dao.BookMapper"/>
+        <package name="cn.medical.dao"/>
     </mappers>
 </configuration>
