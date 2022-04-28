@@ -9,15 +9,41 @@
         http://www.springframework.org/schema/context
          https://www.springframework.org/schema/context/spring-context.xsd">
     <!--1.注解驱动-->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven content-negotiation-manager="contentNegotiationManager">
+        <mvc:message-converters>
+            <bean
+                class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper">
+                    <bean class="com.fasterxml.jackson.databind.ObjectMapper">
+                        <property name="dateFormat">
+                            <bean class="java.text.SimpleDateFormat">
+                                <constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss"/>
+                            </bean>
+                        </property>
+                    </bean>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
     <!--2.静态资源过滤-->
     <mvc:default-servlet-handler/>
     <!--3.扫描包:controller-->
     <context:component-scan base-package="cn.medical.controller"/>
 
-    <!--4.视图解析器-->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/jsp/"/>
-        <property name="suffix" value=".jsp"/>
+
+
+    <!-- 以.html为后缀名访问，默认返回数据类型是 text/html， 所以要修改返回的数据类型 -->
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="mediaTypes">
+            <map>
+                <entry key="html" value="application/json;charset=UTF-8"/>
+            </map>
+        </property>
     </bean>
+
+<!--    &lt;!&ndash;4.视图解析器&ndash;&gt;-->
+<!--    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+<!--        <property name="prefix" value="/WEB-INF/jsp/"/>-->
+<!--        <property name="suffix" value=".jsp"/>-->
+<!--    </bean>-->
 </beans>

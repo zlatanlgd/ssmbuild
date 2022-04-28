@@ -1,9 +1,7 @@
 package cn.medical.dao;
 
 import cn.medical.pojo.Role;
-import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
 public interface RoleMapper {
     int deleteByPrimaryKey(Integer roleId);
 
